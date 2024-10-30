@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    background: #f1f1f1;
+    background-image: linear-gradient(
+        90deg,
+        transparent 50px,
+        #ffb4b8 50px,
+        #ffb4b8 52px,
+        transparent 52px
+    ),
+    linear-gradient(#e1e1e1 0.1em, transparent 0.1em);
+    background-size: 100% 30px; 
+    min-height: 100vh; /* Garante que o corpo ocupe toda a altura da janela */
+    display: flex;
+    flex-direction: column; /* Permite que o footer fique no final */
+}
+
+header {
+    background: url('../Images/Header.png') no-repeat center center/cover;
+    padding: 1px 0;
+    height: 20vh;
+}
+
+
+.container-menu .logo {
+    height: 20vh;
+}
+
+.container-menu {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    font-size: 25px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #ebac00;
+    color: #ffffff;
+}
+
+/* From Uiverse.io by ErzenXz */ 
+.input {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    background-color: #edcab4e7;
+    justify-content: center;
+    border-radius: 5px;
+    gap: 7.5px;
+    margin-right: 450px;
+   
+    font-size: 1.2em;   /* Aumenta o tamanho do texto dentro do botão */
+}
+
+.value {
+    background-color: transparent;
+    border: none;
+    padding: 25px;
+    color: rgb(88, 9, 9);
+    display: flex;
+    position: relative;
+    gap: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.value:not(:active):hover,
+.value:focus {
+    background-color: #f7e8df;
+    padding: 15px 25px;
+}
+
+.value:focus,
+.value:active {
+    background-color: #ffffff;
+    outline: none;
+}
+
+.value::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    width: 100%;
+    height: 3px;
+    background-color: #ffa600;
+    border-radius: 5px;
+    opacity: 0;
+}
+
+.value:focus::before,
+.value:active::before {
+    opacity: 1;
+}
+
+.value svg {
+    width: 15px;
+}
+
+.nav{
+    list-style: none;
+    display: flex;
+    gap:15px;
+}
+
+.nav-item{
+    margin: 0 10px;
+}
+
+.nav-link{
+color:#fff;
+text-decoration: none;
+transition: color 0.3s;
+}
+
+.navbar-toggler{
+display:none;
+flex-direction:column;
+justify-content: center;
+align-items: center;
+gap: 5px;
+background: none;
+border: none;
+cursor: pointer;
+z-index: 15;
+}
+
+
+.quadros {
+    display: flex;
+    flex-direction: column; /* Empilha os quadros um em cima do outro */
+    gap: 20px; /* Espaçamento entre os quadros */
+    margin: 20px;
+    align-items: center; /* Centraliza os quadros verticalmente */
+    justify-content: center; /* Centraliza os quadros horizontalmente */
+}
+
+.quadro {
+    width: 100%; /* Agora os quadros ocupam toda a largura disponível */
+    max-width: 800px; /* Limite a largura máxima se necessário */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Para garantir que nada saia do quadro */
+    background-color: #f5f5f5; /* Cor de fundo clara */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Centraliza o texto */
+    font-family: sans-serif; /* Fonte sem serifa */
+    color: #333; /* Cor do texto */
+}
+
+
+.quadro > img {
+    width: 100%; /* Imagem ocupa toda a largura do quadro */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.quadro h3 {
+    margin: 10px 0; /* Margem acima e abaixo do título */
+    font-size: 1.5em; /* Tamanho do texto do título */
+    color: #333; /* Cor do título */
+    
+}
+
+.descricao {
+    background-color: black; /* Faixa preta */
+    color: white; /* Texto em branco */
+    padding: 10px; /* Espaçamento interno */
+    font-size: 1.2em; /* Tamanho da fonte */
+}
+
+/* Estilos para o banner */
+.banner {
+    background: url('../Images/Banner.jpg') no-repeat center center/cover;
+    height: 30vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
+}
+
+.banner-content {
+    color: #fff;
+    text-align: center;
+    z-index: 1; /* Certifique-se de que o conteúdo do banner esteja acima da sobreposição */
+}
+
+.banner-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.banner-content p {
+    font-size: 1.5rem;
+}
+
+footer {
+    position: static; /* Muda para static */
+    bottom: 0; /* Fica na parte inferior da página, mas agora não está fixo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Ocupa toda a largura da tela */
+    background: url('../Images/Footer.png') no-repeat center center/cover; /* Fundo do rodapé */
+    padding: 10px 0; /* Espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo */
+    z-index: 1000; /* Garante que o rodapé fique acima de outros elementos */
+}
+
+footer ul {
+    list-style: none; /* Remove marcadores da lista */
+    display: flex; /* Alinha itens em linha */
+    justify-content: center; /* Centraliza itens */
+    gap: 20px; /* Espaçamento entre itens */
+}
+
+footer ul li {
+    display: inline-block; /* Permite que os itens sejam exibidos em linha */
+}
+
+footer ul li a img {
+    width: 40px; /* Tamanho das imagens */
+    transition: transform 0.3s ease; /* Efeito de transição para hover */
+}
+
+footer ul li a img:hover {
+    transform: scale(1.2); /* Aumenta a imagem ao passar o mouse */
+}
+
+footer p {
+    margin-bottom: 10px; /* Margem abaixo do parágrafo */
+    color: rgb(0, 0, 0); /* Cor do texto */
+}
+
+.footer-text {
+    background-color: rgba(255, 244, 237, 0.8); /* Fundo escuro com leve transparência */
+    backdrop-filter: blur(2px); /* Efeito de desfoque */
+    padding: 5px; /* Espaçamento interno para o fundo em volta do texto */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+
+
+.container-menu {
+    position: relative;
+  }
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  
+  .hamburger span {
+    width: 30px;
+    height: 3px;
+    background: black;
+    margin: 2px 0;
+    transition: 0.3s;
+  }
+  
+  .menu-hamburguer {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: 60px; /* Ajuste conforme necessário */
+    left: 0;
+    background: white; /* Cor de fundo do menu */
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .menu-hamburguer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu-hamburguer li {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .menu-hamburguer li button {
+    width: 100%;
+    padding: 15px;
+    background: none;
+    border: none;
+    text-align: left;
+  }
+  
+  /* Estilos para mostrar o menu quando ativo */
+  .menu-hamburguer.active {
+    display: block;
+  }
+  
+  /* Responsividade: Mostrar o botão hamburguer em telas menores */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex; /* Mostra o botão hamburguer */
+    }
+    .input {
+      display: none; /* Esconde os botões de menu em telas menores */
+    }
+  }
+  

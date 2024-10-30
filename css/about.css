@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    background: #f1f1f1;
+    background-image: linear-gradient(
+        90deg,
+        transparent 50px,
+        #ffb4b8 50px,
+        #ffb4b8 52px,
+        transparent 52px
+    ),
+    linear-gradient(#e1e1e1 0.1em, transparent 0.1em);
+    background-size: 100% 30px; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: url('../Images/Header.png') no-repeat center center/cover;
+    padding: 1px 0;
+    height: 20vh;
+}
+
+.container-menu .logo {
+    height: 20vh;
+}
+
+.container-menu {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    background-color: #edcab4e7;
+    justify-content: center;
+    border-radius: 5px;
+    gap: 7.5px;
+    margin-right: 450px;   
+    font-size: 1.2em; 
+}
+
+.value {
+    background-color: transparent;
+    border: none;
+    padding: 25px;
+    color: rgb(88, 9, 9);
+    display: flex;
+    position: relative;
+    gap: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.value:not(:active):hover,
+.value:focus {
+    background-color: #f7e8df;
+    padding: 15px 25px;
+}
+
+.value:focus,
+.value:active {
+    background-color: #ffffff;
+    outline: none;
+}
+
+.value::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    width: 100%;
+    height: 3px;
+    background-color: #ffa600;
+    border-radius: 5px;
+    opacity: 0;
+}
+
+.value:focus::before,
+.value:active::before {
+    opacity: 1;
+}
+
+.value svg {
+    width: 15px;
+}
+
+section.Introdução {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.Intro img {
+    max-width: 40%; /* Ajusta o tamanho da imagem para 40% da largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 20px auto; /* Centraliza a imagem */
+    display: block; /* Garante que a imagem seja um bloco, permitindo a centralização */
+    border-radius: 15px;
+}
+
+.Intro h1 {
+    text-align: center; /* Centraliza o texto do título */
+    font-size: 2.8rem; /* Tamanho do texto do título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    margin-top: 25px;
+    font-family: "Sofia", sans-serif;
+}
+.Intro p {
+    text-align: justify; /* Justifica o texto do parágrafo */
+    font-size: 1.5rem; /* Tamanho do texto do parágrafo */
+    color: #2b2b2b; /* Cor do texto */
+    max-width: 800px; /* Limita a largura do texto para melhor legibilidade */
+    margin: 0 auto; /* Centraliza o parágrafo horizontalmente */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    font-family: "Sofia", sans-serif;
+    margin-top: 20px;
+  
+}
+
+
+.mapa-container {
+    padding: 20px 5px;
+    background: url('../Images/mapa.png') no-repeat center center/cover;
+    text-align: center;
+    font-family: "Sofia", sans-serif;
+    
+}
+
+.mapa-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 3rem;
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 310px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 310px;
+    width: 100%;
+}
+
+.quadros {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os quadros se ajustem à linha */
+    gap: 20px; /* Espaçamento entre os quadros */
+    margin: 20px;
+    justify-content: center; /* Centraliza os quadros horizontalmente */
+    
+}
+
+.quadro {
+    width: calc(50% - 20px); /* Cada quadro ocupa um terço da largura, menos a margem */
+    max-width: 400px; /* Limite a largura máxima dos quadros */
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: sans-serif;
+    color: #333;
+    font-size: 1.2rem; 
+    text-align: justify;
+    
+}
+
+.quadro > img {
+    width: 100%; /* Imagem ocupa toda a largura do quadro */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.quadro h3 {
+    text-align: center; 
+    margin: 10px 0;
+    font-size: 3em;
+    color: #333;
+    font-family: "Rouge Script", cursive;
+    
+}
+
+footer {
+    background: url('../Images/Footer.png') no-repeat center center/cover;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer ul li {
+    display: inline-block;
+}
+
+footer ul li a img {
+    width: 40px;
+    transition: transform 0.3s ease;
+}
+
+footer ul li a img:hover {
+    transform: scale(1.2);
+}
+
+footer p {
+    margin-top: 10px;
+    color: #333;
+}
+
+.footer-text {
+    background-color: rgba(255, 244, 237, 0.8);
+    backdrop-filter: blur(2px);
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
