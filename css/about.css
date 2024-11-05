@@ -242,3 +242,168 @@ footer p {
     border-radius: 5px;
     display: inline-block;
 }
+
+
+
+.container-menu {
+    position: relative;
+  }
+  
+  .hamburger {
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    width: 35px; /* Tamanho reduzido para um visual mais moderno */
+    height: 5px; /* Espessura ajustada */
+    background: rgb(255, 255, 255); /* Cor das barras */
+    margin: 3px 0; /* Espaço entre as barras */
+    border-radius: 3px; /* Bordas arredondadas */
+    transition: all 0.3s; /* Suaviza a animação */
+}
+.close-button {
+    width: 30px; /* Largura do botão */
+    height: 30px; /* Altura do botão */
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    font-size: 24px; /* Tamanho da fonte */
+    color: black; /* Cor do X */
+    cursor: pointer; /* Mão ao passar o mouse */
+    position: absolute; /* Posiciona no canto superior direito */
+    top: 10px; /* Ajuste a posição conforme necessário */
+    right: 15px; /* Ajuste a posição conforme necessário */
+    transition: color 0.3s; /* Suaviza a mudança de cor */
+}
+
+.menu-hamburguer {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: 70px; /* Ajuste conforme necessário */
+    left: 0;
+    background: rgba(255, 255, 255, 0.95); /* Fundo com leve transparência */
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Evita que itens saiam do contêiner */
+}
+
+.menu-hamburguer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Remove margens */
+}
+
+.menu-hamburguer li {
+    border-bottom: 1px solid #ddd; /* Separadores entre itens */
+}
+
+.menu-hamburguer li:last-child {
+    border-bottom: none; /* Remove o separador do último item */
+}
+
+.menu-hamburguer li button {
+    width: 100%;
+    padding: 15px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1rem; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+    transition: background 0.3s; /* Suaviza a mudança de fundo */
+}
+
+.menu-hamburguer li button:hover {
+    background: rgba(0, 0, 0, 0.1); /* Efeito de destaque ao passar o mouse */
+}
+
+/* Estilos para mostrar o menu quando ativo */
+.menu-hamburguer.active {
+    display: block;
+    animation: slideDown 0.3s ease; /* Adiciona animação ao abrir */
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); /* Começa um pouco acima */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Finaliza na posição original */
+    }
+}
+
+/* Adicionando um efeito de transformação ao ícone do hambúrguer quando ativo */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Primeira barra rotaciona */
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0; /* Segunda barra desaparece */
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Terceira barra rotaciona */
+}
+
+/* Responsividade: Mostrar o botão hamburguer em telas menores */
+@media (max-width: 768px) {
+    .menu-hamburguer {
+        display: none; /* Inicialmente oculta o menu hamburguer */
+    }
+
+    .hamburger {
+        display: flex; /* Mostra o botão hamburguer */
+        align-items: center; /* Centraliza verticalmente as barras */
+        justify-content: center; /* Centraliza horizontalmente as barras */
+    }
+
+    .input {
+        display: none; /* Esconde os botões de menu em telas menores */
+    }
+    .Intro img {
+        max-width: 80%; /* Aumenta a largura da imagem para 80% em telas menores */
+        margin: 10px auto; /* Ajusta a margem para melhor visualização em telas pequenas */
+    }
+
+
+    .logo {
+        height: auto;
+        max-width: 80%; /* Ajusta a largura máxima */
+    }
+
+    .Intro h1 {
+        font-size: 2.5rem; /* Ajusta o tamanho do título na seção de introdução */
+        margin: 40px 0 20px; /* Ajusta margens */
+    }
+
+    .Intro p {
+        font-size: 1rem; /* Ajusta o tamanho do texto na introdução */
+        margin: 0 20px; /* Adiciona margem lateral para melhor legibilidade */
+    }
+
+    .quadro {
+        width: 90%; /* Ajusta a largura dos quadros para telas menores */
+        margin: 0 auto 20px; /* Centraliza os quadros e adiciona espaço inferior */
+    }
+
+    .descricao {
+        font-size: 0.9rem; /* Ajusta o tamanho do texto das descrições */
+        line-height: 1.5; /* Melhora a legibilidade com espaçamento entre linhas */
+    }
+
+    .mapa-container{
+        display: none;
+    }
+    
+
+    .button {
+        height: 3rem; /* Diminuir a altura dos botões */
+        font-size: 0.9rem; /* Diminuir o tamanho da fonte */
+        width: 7rem; /* Largura reduzida em telas menores */     
+    }
+}

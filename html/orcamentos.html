@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Milk-Shakespeare - Solicitar Orçamento</title>
-    <link rel="stylesheet" href="../css/contato.css" />
+    <link rel="stylesheet" href="../css/orcamento.css" />
     <script src="../js/orça.js"></script>
   </head>
   <body>
@@ -87,10 +87,15 @@
   </header>
   
 
+
+   
     <main>
-      <div class="contato">
-        <h2>Entre em Contato</h2>
+      
+      <div class="orcamento">
+        <h2>Solicitar Orçamento</h2>
         <form id="formorca">
+          
+
           <div class="form-group">
             <label for="nome">Nome:</label>
             <input
@@ -116,7 +121,13 @@
               placeholder="Seu Telefone"
               required
             />
-           
+            <label for="servico">Serviço Desejado:</label>
+            <select id="servico" name="servico" required>
+              <option value="">Selecione um serviço</option>
+              <option value="Livro">Empréstimo de Livros</option>
+              <option value="Evento">Evento</option>
+              <option value="Cardápio">Cardápio</option>
+            </select>
             <label for="Mensagem">Mensagem:</label>
             <textarea type="text" 
               placeholder="Digite sua mensagem"
@@ -125,10 +136,20 @@
               name="Mensagem"
               required
             ></textarea>
+                        <label for="E-mail do Empresario">E-mail do Empresário:</label>
+            <input
+              type="email"
+              id="telefone"
+              name="telefone"
+              placeholder="Seu E-mail Para Receber Orçamentos"
+              required
+            />
+            <p>Insira o e-mail que deseja receber os orçamentos</p>
+            
+            
+            <img src="../Images/Livro.png" alt="Imagem de contato" class="img-contato">
 
-            <img src="../Images/Livro2.png" alt="Imagem de contato" class="img-contato">
-                      
-            <button type="submit">Enviar Mensagem</button>
+            <button type="submit">Enviar Solicitação</button>
           </div>
         </form>
       </div>
@@ -166,10 +187,7 @@
         </li>
       </ul>
     </footer>
-
-    <script src="../js/validarform.js"></script>
-    <script src="../js/butao.js"></script>
-
   </body>
- 
+  <script src="../js/validarform.js"></script>
+  <script src="../js/butao.js"></script>
 </html>

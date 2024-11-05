@@ -18,9 +18,9 @@ body {
     ),
     linear-gradient(#e1e1e1 0.1em, transparent 0.1em);
     background-size: 100% 30px; 
-    min-height: 100vh; /* Garante que o corpo ocupe toda a altura da janela */
+    min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Permite que o footer fique no final */
+    flex-direction: column;
 }
 
 header {
@@ -233,6 +233,163 @@ z-index: 15;
     font-size: 1.5rem;
 }
 
+/* From Uiverse.io by OliverZeros */ 
+/* Estilos gerais dos botões */
+.button {
+    all: unset;
+   
+}
+
+.button {
+    position: relative;
+    display: inline-flex;
+    height: 3.5rem; /* Diminuído */
+    align-items: center;
+    justify-content: center; /* Centraliza o texto */
+    border-radius: 5px;
+    padding-left: 1.5rem; /* Diminuído */
+    padding-right: 1.5rem; /* Diminuído */
+    font-family: Segoe UI;
+    font-size: 1rem; /* Diminuído */
+    font-weight: 650;
+    color: #f1c5ab;
+    letter-spacing: -0.06em;
+    margin: 0.5rem; /* Adicionado espaçamento entre os botões */
+    width: 14rem; /* Largura fixa reduzida */
+    border: 2px solid rgba(161, 93, 48, 255); /* Borda em volta dos botões */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional para destacar */
+    margin-bottom: 20px;
+    
+}
+
+.button-item {
+    background-color: transparent;
+    color: #460e04;
+    
+}
+
+.button-item .button-bg {
+    border-color: rgba(51, 51, 51, 255);
+    background-color: #fff;
+}
+
+/* Estilos do fundo e das animações */
+.button-inner,
+.button-inner-hover,
+.button-inner-static {
+    pointer-events: none;
+    display: block;
+}
+
+.button-inner {
+    position: relative;
+}
+
+.button-inner-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(70%);
+}
+
+.button-bg {
+    overflow: hidden;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transition: transform 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.button-bg,
+.button-bg-layer,
+.button-bg-layers {
+    display: block;
+}
+
+.button-bg-layers {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: -60%;
+    aspect-ratio: 1 / 1;
+    width: max(100%, 8rem); /* Diminuído para largura máxima */
+}
+
+.button-bg-layer {
+    border-radius: 9999px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+}
+
+.button-bg-layer.-red {
+    background-color: rgb(133, 9, 1);
+}
+
+.button-bg-layer.-orange {
+    background-color: rgba(161, 93, 48, 255);
+}
+
+.button-bg-layer.-yellow {
+    --tw-bg-opacity: 1;
+    background-color: rgba(237, 202, 180, var(--tw-bg-opacity));
+}
+
+/* Estilos para o hover */
+.button:hover .button-inner-static {
+    opacity: 0;
+    transform: translateY(-70%);
+    transition:
+        transform 1.4s cubic-bezier(0.19, 1, 0.22, 1),
+        opacity 0.3s linear;
+}
+
+.button:hover .button-inner-hover {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        transform 1.4s cubic-bezier(0.19, 1, 0.22, 1),
+        opacity 1.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.button:hover .button-bg-layer {
+    transition:
+        transform 1.3s cubic-bezier(0.19, 1, 0.22, 1),
+        opacity 0.3s linear;
+}
+
+.button:hover .button-bg-layer-1 {
+    transform: scale(1);
+}
+
+.button:hover .button-bg-layer-2 {
+    transition-delay: 0.1s;
+    transform: scale(1);
+}
+
+.button:hover .button-bg-layer-3 {
+    transition-delay: 0.2s;
+    transform: scale(1);
+}
+
+/* Estilos do contêiner */
+.button-container {
+    display: flex; /* Usar flexbox para layout */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    gap: 1rem; /* Espaçamento entre os botões */
+    margin: auto; /* Para centralizar o contêiner na página */
+}
+
+
 footer {
     position: static; /* Muda para static */
     bottom: 0; /* Fica na parte inferior da página, mas agora não está fixo */
@@ -283,52 +440,107 @@ footer p {
   }
   
   .hamburger {
-    display: none;
+    display: none; /* Oculta por padrão, exiba em telas menores com media query */
     flex-direction: column;
     cursor: pointer;
     background: none;
     border: none;
-  }
-  
-  .hamburger span {
-    width: 30px;
-    height: 3px;
-    background: black;
-    margin: 2px 0;
-    transition: 0.3s;
-  }
-  
-  .menu-hamburguer {
+}
+
+.hamburger span {
+    width: 35px; /* Tamanho reduzido para um visual mais moderno */
+    height: 5px; /* Espessura ajustada */
+    background: rgb(255, 255, 255); /* Cor das barras */
+    margin: 3px 0; /* Espaço entre as barras */
+    border-radius: 3px; /* Bordas arredondadas */
+    transition: all 0.3s; /* Suaviza a animação */
+}
+.close-button {
+    width: 30px; /* Largura do botão */
+    height: 30px; /* Altura do botão */
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    font-size: 24px; /* Tamanho da fonte */
+    color: black; /* Cor do X */
+    cursor: pointer; /* Mão ao passar o mouse */
+    position: absolute; /* Posiciona no canto superior direito */
+    top: 10px; /* Ajuste a posição conforme necessário */
+    right: 15px; /* Ajuste a posição conforme necessário */
+    transition: color 0.3s; /* Suaviza a mudança de cor */
+}
+
+.menu-hamburguer {
     display: none; /* Escondido por padrão */
     position: absolute;
-    top: 60px; /* Ajuste conforme necessário */
+    top: 70px; /* Ajuste conforme necessário */
     left: 0;
-    background: white; /* Cor de fundo do menu */
+    background: rgba(255, 255, 255, 0.95); /* Fundo com leve transparência */
     width: 100%;
     z-index: 1;
-  }
-  
-  .menu-hamburguer ul {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Evita que itens saiam do contêiner */
+}
+
+.menu-hamburguer ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  .menu-hamburguer li {
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .menu-hamburguer li button {
+    margin: 0; /* Remove margens */
+}
+
+.menu-hamburguer li {
+    border-bottom: 1px solid #ddd; /* Separadores entre itens */
+}
+
+.menu-hamburguer li:last-child {
+    border-bottom: none; /* Remove o separador do último item */
+}
+
+.menu-hamburguer li button {
     width: 100%;
     padding: 15px;
     background: none;
     border: none;
     text-align: left;
-  }
-  
-  /* Estilos para mostrar o menu quando ativo */
-  .menu-hamburguer.active {
+    font-size: 1rem; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+    transition: background 0.3s; /* Suaviza a mudança de fundo */
+}
+
+.menu-hamburguer li button:hover {
+    background: rgba(0, 0, 0, 0.1); /* Efeito de destaque ao passar o mouse */
+}
+
+/* Estilos para mostrar o menu quando ativo */
+.menu-hamburguer.active {
     display: block;
-  }
+    animation: slideDown 0.3s ease; /* Adiciona animação ao abrir */
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); /* Começa um pouco acima */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Finaliza na posição original */
+    }
+}
+
+/* Adicionando um efeito de transformação ao ícone do hambúrguer quando ativo */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Primeira barra rotaciona */
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0; /* Segunda barra desaparece */
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Terceira barra rotaciona */
+}
+
   
   /* Responsividade: Mostrar o botão hamburguer em telas menores */
   @media (max-width: 768px) {
@@ -338,5 +550,25 @@ footer p {
     .input {
       display: none; /* Esconde os botões de menu em telas menores */
     }
+
+    .logo {
+        height: auto;
+        max-width: 80%; /* Ajusta a largura máxima */
+    }
+    
+    .banner-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+    
+    .banner-content p {
+        font-size: 1rem;
+    }
+
+    .button {
+        height: 3rem; /* Diminuir a altura dos botões */
+        font-size: 0.9rem; /* Diminuir o tamanho da fonte */
+        width: 7rem; /* Largura reduzida em telas menores */     
+}
   }
-  

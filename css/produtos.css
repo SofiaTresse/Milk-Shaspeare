@@ -188,7 +188,8 @@ header {
     line-height: 1.6; /* Aumenta a altura da linha para legibilidade */
     margin-bottom: 20px; /* Espaçamento abaixo do parágrafo */
     font-size: 1.6rem;;
-    background-color: #ffffff75;
+   color: #631a08; /* Cor do título */
+    background-color: #ffffff91;
     border-radius: 10px;
 }
 
@@ -248,3 +249,191 @@ footer p {
     border-radius: 5px;
     display: inline-block;
 }
+
+
+
+
+
+/* Responsividade: Mostrar o botão hamburguer em telas menores */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Mostra o botão hamburguer */
+    }
+    
+    .input {
+        display: none; /* Esconde os botões de menu em telas menores */
+    }
+
+    .logo {
+        height: auto;
+        max-width: 80%; /* Ajusta a largura máxima */
+    }
+
+    .banner-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+
+    .banner-content p {
+        font-size: 1rem;
+    }
+
+    .button {
+        height: 3rem; /* Diminuir a altura dos botões */
+        font-size: 0.9rem; /* Diminuir o tamanho da fonte */
+        width: 7rem; /* Largura reduzida em telas menores */
+    }
+
+    .menu-hamburguer {
+        display: none; /* Escondido por padrão */
+    }
+
+    .quadros {
+        flex-direction: column; /* Alinha os quadros verticalmente */
+        align-items: center; /* Centraliza os quadros */
+    }
+
+    .quadro {
+        width: 90%; /* Largura reduzida para telas menores */
+        height: auto; /* Altura automática para melhor adaptação */
+        margin-bottom: 20px; /* Espaçamento entre os quadros */
+    }
+
+    .modal-content {
+        width: 90%; /* Largura reduzida para a modal */
+        max-width: 95%; /* Largura máxima ajustada */
+        margin: 5% auto; /* Margem vertical reduzida */
+        padding: 15px; /* Padding reduzido para melhor espaço em telas menores */
+    }
+
+    .modal h2 {
+        font-size: 3em; /* Tamanho do título ajustado para telas menores */
+    }
+
+    .modal p {
+        font-size: 1.4rem; /* Tamanho do texto ajustado */
+    }
+
+    .fechar {
+        font-size: 30px; /* Tamanho do botão de fechar ajustado */
+    }
+
+    .quadro > img {
+        
+        object-fit: cover; /* Mantém a proporção da imagem */
+    }
+
+    .modal-content img {
+        width: 100%; /* Imagens dentro da modal ocupam 100% da largura */
+        max-width: 100%; /* Impede que a imagem ultrapasse a largura da modal */
+        height: auto; /* Altura automática para manter a proporção */
+    }
+}
+
+  .container-menu {
+    position: relative;
+  }
+  
+  .hamburger {
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    width: 35px; /* Tamanho reduzido para um visual mais moderno */
+    height: 5px; /* Espessura ajustada */
+    background: rgb(255, 255, 255); /* Cor das barras */
+    margin: 3px 0; /* Espaço entre as barras */
+    border-radius: 3px; /* Bordas arredondadas */
+    transition: all 0.3s; /* Suaviza a animação */
+}
+.close-button {
+    width: 30px; /* Largura do botão */
+    height: 30px; /* Altura do botão */
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    font-size: 24px; /* Tamanho da fonte */
+    color: black; /* Cor do X */
+    cursor: pointer; /* Mão ao passar o mouse */
+    position: absolute; /* Posiciona no canto superior direito */
+    top: 10px; /* Ajuste a posição conforme necessário */
+    right: 15px; /* Ajuste a posição conforme necessário */
+    transition: color 0.3s; /* Suaviza a mudança de cor */
+}
+
+.menu-hamburguer {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: 70px; /* Ajuste conforme necessário */
+    left: 0;
+    background: rgba(255, 255, 255, 0.95); /* Fundo com leve transparência */
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Evita que itens saiam do contêiner */
+}
+
+.menu-hamburguer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Remove margens */
+}
+
+.menu-hamburguer li {
+    border-bottom: 1px solid #ddd; /* Separadores entre itens */
+}
+
+.menu-hamburguer li:last-child {
+    border-bottom: none; /* Remove o separador do último item */
+}
+
+.menu-hamburguer li button {
+    width: 100%;
+    padding: 15px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1rem; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+    transition: background 0.3s; /* Suaviza a mudança de fundo */
+}
+
+.menu-hamburguer li button:hover {
+    background: rgba(0, 0, 0, 0.1); /* Efeito de destaque ao passar o mouse */
+}
+
+/* Estilos para mostrar o menu quando ativo */
+.menu-hamburguer.active {
+    display: block;
+    animation: slideDown 0.3s ease; /* Adiciona animação ao abrir */
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); /* Começa um pouco acima */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Finaliza na posição original */
+    }
+}
+
+/* Adicionando um efeito de transformação ao ícone do hambúrguer quando ativo */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Primeira barra rotaciona */
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0; /* Segunda barra desaparece */
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Terceira barra rotaciona */
+}
+
+  
